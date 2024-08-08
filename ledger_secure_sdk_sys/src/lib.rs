@@ -63,7 +63,7 @@ unsafe impl critical_section::Impl for CriticalSection {
 #[no_mangle]
 #[cfg(feature = "heap")]
 extern "C" fn heap_init() {
-    const HEAP_SIZE: usize = 8192;
+    const HEAP_SIZE: usize = 12300;
     static mut HEAP_MEM: [MaybeUninit<u8>; HEAP_SIZE] = [MaybeUninit::uninit(); HEAP_SIZE];
     unsafe { HEAP.init(HEAP_MEM.as_ptr() as usize, HEAP_SIZE) }
 }
